@@ -1,0 +1,61 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: lightslategray;
+}
+
+h1 {
+    font-size: 30px;
+    color: burlywood;
+    text-shadow: black;
+    text-decoration: black;
+    font-family: Bahnschrift;
+}
+
+p {
+    color: black;
+    font-size: 20px;
+    position: relative;
+    text-align: left;
+    padding: 0 70px 0 0;
+}
+
+input {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 55px;
+    position: absolute;
+    left: 215px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+button {
+
+    background-color: rosybrown;
+    border-radius: 50%;
+    width: 100px;
+
+
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.out{
+    margin: 20px 0 0 0;
+    font-size: 18px;
+    font-family: Arial;
+}
