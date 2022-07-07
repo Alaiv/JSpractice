@@ -4,7 +4,7 @@
     // let button = document.querySelector(".button-primary");
 
 overall.addEventListener("click", function () {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${overall.value}&appid=c0f80980980331808c681e5ff8ea648f`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${overall.value}&appid={...yourToken...}`)
         .then(function (resp) {
             return resp.json()
         })
