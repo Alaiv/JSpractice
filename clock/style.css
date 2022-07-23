@@ -1,0 +1,12 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#clocks {
+    margin-top: 300px;
+    font-size: 110px;
+    font-family: "Bauhaus 93";
+    cursor: pointer;
+}
