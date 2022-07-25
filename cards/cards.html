@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cards.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header__title">Flashcards</div>
+        <button class="header__btn-add">Add card</button>
+        <button class="header__btn-del">Delete card</button>
+    </header>
+    <hr>
+    <main>
+        <div class="flashcards">
+        </div>
+    </main>
+    <div class="add-card-window" style="display: none">
+        <p>Question</p>
+        <input class="question" type="text">
+        <p>Answer</p>
+        <input class="answer" type="text">
+        <div class="windows__buttons">
+            <button class="save">save</button>
+            <button class="close">close</button>
+        </div>
+    </div>
+</div>
+
+<script src="cards.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lavender;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    width: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.header__btn-add {
+    margin-left: 850px;
+}
+
+.flashcards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 0 5px 5px 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+.flashcards__question {
+    border: 0;
+    border-top: 2px solid red;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.flashcards__answer {
+    text-align: center;
+    font-size: 30px;
+    color: red;
+}
+
+.add-card-window {
+    max-width: 350px;
+    height: 210px;
+    border: 2px solid black;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    background-color: white;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.windows__buttons {
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+
+.flashcards__answer {
+    position: relative;
+}
