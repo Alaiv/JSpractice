@@ -84,3 +84,17 @@ input {
 .flashcards__answer {
     position: relative;
 }
+
+.delete__card {
+    position: relative;
+    bottom: 36px;
+    left: 70px;
+    width: 60px;
+    height: 18px;
+    background-color: black;
+    color: white;
+}
+
+.delete__card:hover {
+    background-color: red;
+}

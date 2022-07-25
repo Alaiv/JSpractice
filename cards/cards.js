@@ -35,8 +35,11 @@ function addCard () {
     let cardDiv = document.createElement("div");
     let cardH2 = document.createElement("h2");
     let cardH3 = document.createElement("h3");
+    let deleteCard = document.createElement("button")
 
     cardDiv.className = "card";
+    deleteCard.className = "delete__card"
+    deleteCard.innerHTML = "Remove"
     cardH2.className = "flashcards__question";
     cardH3.className = "flashcards__answer";
     cardH2.innerHTML = question.value;
@@ -46,6 +49,7 @@ function addCard () {
 
     cardDiv.appendChild(cardH2)
     cardDiv.appendChild(cardH3)
+    cardH2.appendChild(deleteCard)
     allCards.appendChild(cardDiv);
 
     cardDiv.onclick = someFunc(cardH3);
@@ -54,6 +58,11 @@ function addCard () {
 
     question.value = "";
     answer.value = "";
+
+    deleteCard.onclick = function () {
+        allCards.removeChild(cardDiv);
+        localStorage.setItem("item", allCards.innerHTML);
+    }
 }
 
 
