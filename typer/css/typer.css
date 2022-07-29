@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+.container {
+    width: 750px;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container__text {
+    margin-top: 300px;
+    font-size: 30px;
+    color: green;
+}
+
+#quote::after {
+    content: ' \258E';
+    width: 30px;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50%{opacity: 0}
+}
+
