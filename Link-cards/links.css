@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("/img/2d213d36f66c318754bd4b78ab9361f1.jpg");
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.images {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.card {
+    width: 400px;
+    margin-top: 50px;
+    background-color: cornflowerblue;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.7s ease;
+    font-family: "Bell MT";
+    box-shadow: 2px 2px 2px black;
+}
+
+.title {
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+.text {
+    font-size: 20px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.middle{
+    position: relative;
+    bottom: 200px;
+    opacity: 0;
+    transition:  .5s ease;
+}
+
+.card:hover .middle{
+    opacity: 1;
+}
+
+.fa-brands {
+    color: red;
+    font-size: 70px;
+}
+
+.article {
+    background-color: white;
+    color: black;
+    max-width: 150px;
+    margin: 0 auto;
+
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 95%;
+    }
+
+    .card:hover {
+        transform: scale(1);
+    }
+}
+
