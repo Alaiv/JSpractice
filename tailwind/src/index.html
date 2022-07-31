@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../dist/output.css">
-    <title>Title</title>
-</head>
-<body>
-<div class="max-w-2xl mx-auto p-8">
-    <h2 class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase">Hello there</h2>
-</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	 <link rel="stylesheet" href="/dist/output.css">
+    <title>Tailwind practice</title>
+  </head>
+  <body>
+    <div class="mx-auto max-w-2xl p-8">
+      <h2 class="left-0 font-semibold uppercase tracking-wide sm:text-lg sm:leading-snug">Introducing</h2>
 
-</body>
+      <ul class="flex space-x-6">
+        <li class="flex flex-col items-center space-y-1">
+                <div class="relative bg-gradient-to-tr from-yellow-400 to bg-purple-400 p-1 rounded-full">
+          <a class="block bg-white p-1 rounded-full transform transition hover:rotate-6" href="#">
+            <img class="h-24 w-24 rounded-full"  src="https://placekitten.com/200/200" alt="kitty" />
+          </a>
+          <button class="absolute bottom-0 right-1 bg-blue-500 h-8 w-8 rounded-full text-white text-2xl font-semibold border-4 border-white flex justify-center items-center font-mono hover:bg-blue-700">+</button>
+                </div>
+          <a href="#">you</a>
+        </li>
+        <li class="flex flex-col items-center space-y-1">                
+                 <div class="bg-gradient-to-tr from-yellow-400 to bg-purple-400 p-1 rounded-full">
+          <a class="block bg-white p-1 rounded-full transform transition hover:rotate-6" href="#">
+            <img class="h-24 w-24 rounded-full"  src="https://placekitten.com/200/203" alt="kitty" />
+          </a>
+                </div>
+          <a href="#">kopo</a>
+        </li>
+        <li class="flex flex-col items-center space-y-1">               
+                 <div class="bg-gradient-to-tr from-yellow-400 to bg-purple-400 p-1 rounded-full">
+          <a class="block bg-white p-1 rounded-full transform transition hover:rotate-6" href="#">
+            <img class="h-24 w-24 rounded-full"  src="https://placekitten.com/200/201" alt="kitty" />
+          </a>
+                </div>
+          <a href="#">bocco</a>
+        </li>
+        <li class="flex flex-col items-center space-y-1">             
+                <div class="bg-gradient-to-tr from-yellow-400 to bg-purple-400 p-1 rounded-full">
+          <a class="block bg-white p-1 rounded-full transform transition hover:rotate-6" href="#">
+            <img class="h-24 w-24 rounded-full"  src="https://placekitten.com/200/202" alt="kitty" />
+          </a>
+                </div>
+          <a href="#">dashka</a>
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>
