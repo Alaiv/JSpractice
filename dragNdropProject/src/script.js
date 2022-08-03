@@ -1,110 +1,110 @@
-const drggableList = document.querySelector('#draggable-list');
+const dragableList = document.querySelector('#draggable-list');
 const checkBtn = document.querySelector('#check');
 
-const bestGames = [
-	 'Bloodborne',
-	 'Kotor',
-	 'Kotor2',
-	 'Elden ring',
-	 'Sekiro',
-	 'Dark souls 1-3',
-	 'Yakuza 0',
-	 'Warhammer Online',
-	 'Vermintide',
-	 'Mass effect 1-3',
-];
-//store list items
+const gunList = [
+	"Benelli Supernova",
+ 	"Mossberg 500",
+	"FN SLP",
+	"Remington Model 870",
+	"Kel-Tec KSG",
+	"UTAS UTS-15",
+	"Super Black Eagle 3",
+	"SRM Arms model 1216",
+	"VEPR-12 «Молот»",
+	"Super Black Eagle II Shotgun"
+]
+
 const listItems = [];
 
-let dragStartIndex;
+let dragStartId;
 
-//insert listItems into DOM;
 
-function createList() {
-	[...bestGames]
-	.map(a => ({value: a, sort: Math.random()}))
-	.sort((a, b) => a.sort - b.sort)
-	.map(a => a.value)
-	.forEach((game, index) => {
-		const listItem = document.createElement('li');
+function addItems() {
+	[...gunList]
+		.map(a => ({value: a, sort: Math.random()}))
+		.sort((a, b) => a.sort - b.sort)
+		.map(a => a.value)
+		.forEach((item, index) => {
 
-		listItem.setAttribute('data-index', index);
+			const listItem = document.createElement('li');
+			listItem.setAttribute('data-index', index);
 
-		listItem.innerHTML = `<span class='number'>${index + 1}</span>
-		<div class='draggable' draggable='true'>
-		<p class="game-name">${game}</p>
-		<i class="fas fa-grip-lines"></i>
-		</div>`;
+			listItem.innerHTML = `
+			<span class="number">${index + 1}</span>
+			<div class="draggable" draggable="true">
+			<p class="gun-name">${item}</p>
+			<i class="fas fa-grip-lines"></i></div>`
 
-		listItems.push(listItem);
+			listItems.push(listItem);
 
-		drggableList.appendChild(listItem)
-	})
+			dragableList.appendChild(listItem);
+		})
 
-	addEventListeners();
+		addEventListeners();
 }
 
-window.addEventListener('onload', createList())
+window.addEventListener('onload', addItems());
 
 function dragStart() {
-	dragStartIndex = +this.closest('li').getAttribute('data-index')
+	dragStartId = +this.getAttribute('data-index');
+}
+
+function dragOver(e) {
+	e.preventDefault();
 }
 
 function dragEnter() {
-	this.classList.add('over')
+	this.classList.add('over');
 }
 
 function dragLeave() {
-	this.classList.remove('over')
-}
-
-function dragOver(event) {
-	event.preventDefault();
+	this.classList.remove('over');
 }
 
 function dragDrop() {
-	const dragEndIndex = +this.getAttribute('data-index');
+	const dragEndId = +this.getAttribute('data-index')
 
-	swapItems(dragStartIndex, dragEndIndex);
+	swapElements(dragStartId, dragEndId);
 
 	this.classList.remove('over');
 }
-//swap list items from index to index2
-function swapItems(fromIx, toIx) {
-	const itemOne = listItems[fromIx].querySelector('.draggable');
-	const itemTwo = listItems[toIx].querySelector('.draggable');
 
-	listItems[fromIx].appendChild(itemTwo)
-	listItems[toIx].appendChild(itemOne)
+function swapElements(dragStartIndex, dragEndIndex) {
+	const startItem = listItems[dragStartIndex].querySelector('.draggable');
+	const endItem = listItems[dragEndIndex].querySelector('.draggable');
+
+	listItems[dragStartIndex].appendChild(endItem);
+	listItems[dragEndIndex].appendChild(startItem);
 }
-//check order
-function checkOrder() {
-	listItems.forEach((item, index) => {
-		const gameName = item.querySelector('.draggable').innerText.trim();
-		console.log(gameName);
-		if(gameName !== bestGames[index]) {
+
+function check() {
+	listItems.forEach((item, id) => {
+		const gunName = item.querySelector('.gun-name').innerText.trim();
+		if(gunName !== gunList[id]) {
 			item.classList.add('wrong')
 		} else {
-			item.classList.remove('wrong');
+			item.classList.remove('wrong')
 			item.classList.add('right')
 		}
 	})
 }
 
+
 function addEventListeners() {
-	const draggables = document.querySelectorAll('.draggable');
-	const draggListItems = document.querySelectorAll('.draggable-list li');
+	// const draggables = document.querySelectorAll('.draggable');
+	const draggableList = document.querySelectorAll('.draggable-list li');
 
-	draggables.forEach(draggable => {
-		draggable.addEventListener('dragstart', dragStart);
-	})
+	// draggables.forEach(dragItem => {
+	// 	dragItem.addEventListener('dragstart', dragStart);
+	// })
 
-	draggListItems.forEach(item => {
+	draggableList.forEach(item => {
+		item.addEventListener('dragstart', dragStart);
 		item.addEventListener('dragover', dragOver);
-		item.addEventListener('drop', dragDrop);
 		item.addEventListener('dragenter', dragEnter);
 		item.addEventListener('dragleave', dragLeave);
+		item.addEventListener('drop', dragDrop);
 	})
 }
 
-checkBtn.addEventListener('click', checkOrder);
+checkBtn.addEventListener('click', check);

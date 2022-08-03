@@ -51,15 +51,15 @@ body {
 	background-color: #eaeaea;
 }
 
-.game-name {
+.gun-name {
 	margin: 0 20px 0 0;
 }
 
-.draggable-list li.right .game-name {
+.draggable-list li.right .gun-name {
 	color: #3ae374;
 }
 
-.draggable-list li.wrong .game-name {
+.draggable-list li.wrong .gun-name {
 	color: #ff3838;
 }
 
