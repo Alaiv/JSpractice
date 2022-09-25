@@ -1,1 +1,1 @@
-# JsPractice
+# JsPractice + Alghoritms
